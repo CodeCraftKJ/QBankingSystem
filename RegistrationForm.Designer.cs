@@ -108,6 +108,7 @@
             this.btnRegister.TabIndex = 8;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click_1);
             // 
             // labName
             // 
@@ -135,7 +136,6 @@
             this.labPhone.Size = new System.Drawing.Size(50, 20);
             this.labPhone.TabIndex = 11;
             this.labPhone.Text = "Phone";
-            this.labPhone.Click += new System.EventHandler(this.labPhone_Click);
             // 
             // txtName
             // 

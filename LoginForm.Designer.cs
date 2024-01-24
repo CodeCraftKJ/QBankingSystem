@@ -89,6 +89,7 @@ namespace QBankingSystem
             this.linkForgotPassword.TabIndex = 5;
             this.linkForgotPassword.TabStop = true;
             this.linkForgotPassword.Text = "Forgot Password?";
+            this.linkForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkForgotPassword_LinkClicked_1);
             // 
             // LoginForm
             // 

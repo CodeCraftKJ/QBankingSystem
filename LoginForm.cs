@@ -72,11 +72,13 @@ namespace QBankingSystem
             }
         }
 
-
-        private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkForgotPassword_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // TODO: Open the form to reset the password or create a new account
-            MessageBox.Show("Link to password reset or registration not implemented yet.", "Not Implemented", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // For now, let's navigate to the RegistrationForm
+            RegistrationForm registrationForm = new RegistrationForm();
+            registrationForm.Show();
+            this.Hide(); // Hide the login form
         }
     }
 }
