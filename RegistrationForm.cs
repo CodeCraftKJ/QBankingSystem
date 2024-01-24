@@ -157,6 +157,7 @@ namespace QBankingSystem
             // The column names here must match the ones in your database table
             string query = "INSERT INTO Users (Username, Password, Name, Surname, Phone, Email) VALUES (@Username, @Password, @Name, @Surname, @Phone, @Email)";
 
+
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@Username", username);
