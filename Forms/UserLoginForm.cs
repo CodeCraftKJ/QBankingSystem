@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 
 namespace QBankingSystem
 {
-    public partial class LoginForm : Form
+    public partial class UserLoginForm : Form
     {
-        public LoginForm()
+        public UserLoginForm()
         {
             InitializeComponent();
         }
@@ -36,8 +36,9 @@ namespace QBankingSystem
                         // If the credentials are valid, show a success message and open the main dashboard
                         MessageBox.Show("Login successful!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // TODO: Open the main dashboard form and close the login form
-                        AccountForm mainDashboard = new AccountForm(username,password);
+                        User.Username = username;
+                        User.Password = password;
+                        UserAccountForm mainDashboard = new UserAccountForm();
                         mainDashboard.Show();
                         this.Hide(); // Hide the login form
                     }
@@ -76,7 +77,7 @@ namespace QBankingSystem
         {
             // TODO: Open the form to reset the password or create a new account
             // For now, let's navigate to the RegistrationForm
-            RegistrationForm registrationForm = new RegistrationForm();
+            UserRegistrationForm registrationForm = new UserRegistrationForm();
             registrationForm.Show();
             this.Hide(); // Hide the login form
         }

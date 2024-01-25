@@ -1,7 +1,7 @@
 ﻿
 namespace QBankingSystem
 {
-    partial class LoginForm
+    partial class UserLoginForm
     {
         /// <summary>
         ///  Required designer variable.

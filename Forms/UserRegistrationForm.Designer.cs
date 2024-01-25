@@ -1,6 +1,6 @@
 ﻿namespace QBankingSystem
 {
-    partial class RegistrationForm
+    partial class UserRegistrationForm
     {
         private System.ComponentModel.IContainer components = null;
 

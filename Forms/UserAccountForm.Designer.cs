@@ -1,8 +1,32 @@
-﻿namespace QBankingSystem
+﻿
+namespace QBankingSystem
 {
-    partial class AccountForm
+    partial class UserAccountForm
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private System.Windows.Forms.Label labName;
         private System.Windows.Forms.Label labSurname;
         private System.Windows.Forms.Label labPESEL;
@@ -16,6 +40,7 @@
             this.labPESEL = new System.Windows.Forms.Label();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.lstAccounts = new System.Windows.Forms.ListBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labName
@@ -52,6 +77,7 @@
             this.btnCreateAccount.Size = new System.Drawing.Size(150, 30);
             this.btnCreateAccount.TabIndex = 3;
             this.btnCreateAccount.Text = "Create Account";
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
             // lstAccounts
             // 
@@ -61,13 +87,23 @@
             this.lstAccounts.Name = "lstAccounts";
             this.lstAccounts.Size = new System.Drawing.Size(200, 164);
             this.lstAccounts.TabIndex = 4;
-            // this.lstAccounts.SelectedIndexChanged += new System.EventHandler(this.lstAccounts_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(50, 254);
+            this.btnRefresh.Name = "button1";
+            this.btnRefresh.Size = new System.Drawing.Size(150, 29);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.button1_Click);
             // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 312);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lstAccounts);
             this.Controls.Add(this.btnCreateAccount);
             this.Controls.Add(this.labPESEL);
@@ -80,5 +116,8 @@
             this.PerformLayout();
 
         }
+
+        private System.Windows.Forms.Button btnRefresh;
     }
+    #endregion
 }

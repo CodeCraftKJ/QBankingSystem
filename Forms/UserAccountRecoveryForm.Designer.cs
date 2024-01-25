@@ -1,6 +1,6 @@
 ﻿namespace QBankingSystem
 {
-    partial class AccountRecoveryForm
+    partial class UserAccountRecoveryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -44,10 +44,11 @@
             // 
             // txtUsernamePhoneEmail
             // 
-            this.txtUsernamePhoneEmail.Location = new System.Drawing.Point(100, 130);
+            this.txtUsernamePhoneEmail.Location = new System.Drawing.Point(100, 137);
             this.txtUsernamePhoneEmail.Name = "txtUsernamePhoneEmail";
             this.txtUsernamePhoneEmail.Size = new System.Drawing.Size(300, 27);
             this.txtUsernamePhoneEmail.TabIndex = 1;
+            this.txtUsernamePhoneEmail.TextChanged += new System.EventHandler(this.txtUsernamePhoneEmail_TextChanged);
             // 
             // btnRecover
             // 

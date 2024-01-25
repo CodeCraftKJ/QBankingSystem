@@ -10,16 +10,20 @@ using System.Windows.Forms;
 
 namespace QBankingSystem
 {
-    public partial class AccountRecoveryForm : Form
+    public partial class UserAccountRecoveryForm : Form
     {
-        public AccountRecoveryForm()
+        public UserAccountRecoveryForm()
         {
             InitializeComponent();
         }
 
         private void btnRecover_Click(object sender, EventArgs e)
         {
-            // Add account recovery logic here
+        }
+
+        private void txtUsernamePhoneEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -5,9 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace QBankingSystem
 {
-    public partial class RegistrationForm : Form
+    public partial class UserRegistrationForm : Form
     {
-        public RegistrationForm()
+        public UserRegistrationForm()
         {
             InitializeComponent();
             txtUsername.Leave += (s, e) => ValidateUsername(txtUsername.Text);
@@ -62,7 +62,6 @@ namespace QBankingSystem
 
         private bool ValidatePhoneNumber(string phoneNumber)
         {
-            // Check if the phone number is exactly 10 digits long
             if (!Regex.IsMatch(phoneNumber, @"^\d{10}$"))
             {
                 MessageBox.Show("Phone number must be exactly 10 digits long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -73,7 +72,6 @@ namespace QBankingSystem
 
         private bool ValidatePESEL(string PESEL)
         {
-            // Check if the phone number is exactly 10 digits long
             if (!Regex.IsMatch(PESEL, @"^\d{11}$"))
             {
                 MessageBox.Show("Pesel number must be exactly 11 digits long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,7 +94,6 @@ namespace QBankingSystem
 
         private void btnRegister_Click_1(object sender, EventArgs e)
         {
-            // Validate all fields before proceeding
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string confirmPassword = txtConfirmPassword.Text;
@@ -106,44 +103,33 @@ namespace QBankingSystem
             string email = txtEmail.Text;
             string pesel = textPESEL.Text;
 
-            // Check all fields for validation
             if (!(ValidateUsername(username) && ValidatePassword(password) &&
                 ValidateConfirmPassword(password, confirmPassword) &&
                 ValidateName(firstName) && ValidateName(lastName) &&
                 ValidatePhoneNumber(phoneNumber) && ValidateEmail(email) && ValidatePESEL(pesel)))
             {
-                // If any validation fails, stop the registration process
                 return;
             }
 
             string connectionString = "Server=DESKTOP-K1A5G55\\SQLEXPRESS;Database=QBankingSystemDB;Integrated Security=True;";
 
-            // Create a SqlConnection using the connection string
             using SqlConnection connection = new SqlConnection(connectionString);
             try
             {
-                // Open the database connection
                 connection.Open();
-
-                // Check if the username already exists in the database
                 if (UsernameExists(connection, username))
                 {
                     MessageBox.Show("Username already exists. Please choose a different username.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                // Insert the new user into the Users table
                 InsertUser(connection, username, password, firstName, lastName, phoneNumber, email,pesel);
-
-                // Show a success message and close the registration form
                 MessageBox.Show("Registration successful!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoginForm LoginForm = new LoginForm();
+                UserLoginForm LoginForm = new UserLoginForm();
                 LoginForm.Show();
                 this.Close();
             }
             catch (Exception ex)
             {
-                // Handle any errors that occur during the database connection or user insertion
                 MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -152,7 +138,6 @@ namespace QBankingSystem
 
         private static bool UsernameExists(SqlConnection connection, string username)
         {
-            // Query the database to check if the username already exists
             string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
 
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -167,7 +152,6 @@ namespace QBankingSystem
 
         private void InsertUser(SqlConnection connection, string username, string password, string name, string surname, string phone, string email, string pesel)
         {
-            // The column names here must match the ones in your database table
             string query = "INSERT INTO Users (Username, Password, Name, Surname, Phone, Email, PESEL) VALUES (@Username, @Password, @Name, @Surname, @Phone, @Email, @PESEL)";
 
 
