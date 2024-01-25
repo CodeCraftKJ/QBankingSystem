@@ -32,6 +32,8 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
+            this.textPESEL = new System.Windows.Forms.TextBox();
+            this.labelPESEL = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labUsername
@@ -131,7 +133,7 @@
             // labPhone
             // 
             this.labPhone.AutoSize = true;
-            this.labPhone.Location = new System.Drawing.Point(123, 151);
+            this.labPhone.Location = new System.Drawing.Point(129, 151);
             this.labPhone.Name = "labPhone";
             this.labPhone.Size = new System.Drawing.Size(50, 20);
             this.labPhone.TabIndex = 11;
@@ -158,12 +160,30 @@
             this.txtPhone.Size = new System.Drawing.Size(301, 27);
             this.txtPhone.TabIndex = 14;
             // 
+            // txtPesel
+            // 
+            this.textPESEL.Location = new System.Drawing.Point(452, 174);
+            this.textPESEL.Name = "txtPesel";
+            this.textPESEL.Size = new System.Drawing.Size(301, 27);
+            this.textPESEL.TabIndex = 16;
+            // 
+            // labPesel
+            // 
+            this.labelPESEL.AutoSize = true;
+            this.labelPESEL.Location = new System.Drawing.Point(569, 151);
+            this.labelPESEL.Name = "labPesel";
+            this.labelPESEL.Size = new System.Drawing.Size(42, 20);
+            this.labelPESEL.TabIndex = 15;
+            this.labelPESEL.Text = "Pesel";
+            // 
             // RegistrationForm
             // 
             this.AcceptButton = this.btnRegister;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 750);
+            this.Controls.Add(this.textPESEL);
+            this.Controls.Add(this.labelPESEL);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtName);
@@ -203,5 +223,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox textPESEL;
+        private System.Windows.Forms.Label labelPESEL;
     }
 }

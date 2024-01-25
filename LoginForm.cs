@@ -37,7 +37,7 @@ namespace QBankingSystem
                         MessageBox.Show("Login successful!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // TODO: Open the main dashboard form and close the login form
-                        AccountForm mainDashboard = new AccountForm();
+                        AccountForm mainDashboard = new AccountForm(username,password);
                         mainDashboard.Show();
                         this.Hide(); // Hide the login form
                     }

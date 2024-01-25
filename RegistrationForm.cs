@@ -17,6 +17,7 @@ namespace QBankingSystem
             txtSurname.Leave += (s, e) => ValidateName(txtSurname.Text);
             txtEmail.Leave += (s, e) => ValidateEmail(txtEmail.Text);
             txtPhone.Leave += (s, e) => ValidatePhoneNumber(txtPhone.Text);
+            textPESEL.Leave += (s, e) => ValidatePESEL(textPESEL.Text);
         }
 
         private bool ValidateUsername(string username)
@@ -70,6 +71,17 @@ namespace QBankingSystem
             return true;
         }
 
+        private bool ValidatePESEL(string PESEL)
+        {
+            // Check if the phone number is exactly 10 digits long
+            if (!Regex.IsMatch(PESEL, @"^\d{11}$"))
+            {
+                MessageBox.Show("Pesel number must be exactly 11 digits long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
 
         private bool ValidateEmail(string email)
         {
@@ -92,12 +104,13 @@ namespace QBankingSystem
             string lastName = txtSurname.Text;
             string phoneNumber = txtPhone.Text;
             string email = txtEmail.Text;
+            string pesel = textPESEL.Text;
 
             // Check all fields for validation
             if (!(ValidateUsername(username) && ValidatePassword(password) &&
                 ValidateConfirmPassword(password, confirmPassword) &&
                 ValidateName(firstName) && ValidateName(lastName) &&
-                ValidatePhoneNumber(phoneNumber) && ValidateEmail(email)))
+                ValidatePhoneNumber(phoneNumber) && ValidateEmail(email) && ValidatePESEL(pesel)))
             {
                 // If any validation fails, stop the registration process
                 return;
@@ -120,7 +133,7 @@ namespace QBankingSystem
                 }
 
                 // Insert the new user into the Users table
-                InsertUser(connection, username, password, firstName, lastName, phoneNumber, email);
+                InsertUser(connection, username, password, firstName, lastName, phoneNumber, email,pesel);
 
                 // Show a success message and close the registration form
                 MessageBox.Show("Registration successful!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -152,10 +165,10 @@ namespace QBankingSystem
             }
         }
 
-        private void InsertUser(SqlConnection connection, string username, string password, string name, string surname, string phone, string email)
+        private void InsertUser(SqlConnection connection, string username, string password, string name, string surname, string phone, string email, string pesel)
         {
             // The column names here must match the ones in your database table
-            string query = "INSERT INTO Users (Username, Password, Name, Surname, Phone, Email) VALUES (@Username, @Password, @Name, @Surname, @Phone, @Email)";
+            string query = "INSERT INTO Users (Username, Password, Name, Surname, Phone, Email, PESEL) VALUES (@Username, @Password, @Name, @Surname, @Phone, @Email, @PESEL)";
 
 
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -166,6 +179,7 @@ namespace QBankingSystem
                 command.Parameters.AddWithValue("@Surname", surname);
                 command.Parameters.AddWithValue("@Phone", phone);
                 command.Parameters.AddWithValue("@Email", email);
+                command.Parameters.AddWithValue("@PESEL", pesel);
 
                 command.ExecuteNonQuery();
             }
