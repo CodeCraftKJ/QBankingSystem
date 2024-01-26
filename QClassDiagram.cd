@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="QBankingSystem.Models.BusinessAccount" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Accounts\BusinessAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Models.Account" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAgAAAAAAAgAAAIAAAAAAAACAAA=</HashCode>
+      <FileName>Models\Accounts\Account.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="QBankingSystem.Models.CheckingAccount" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Accounts\CheckingAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Models.CurrencyAccount" Collapsed="true">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Accounts\CurrencyAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Models.PersonalAccount" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Accounts\PersonalAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Models.SavingsAccount" Collapsed="true">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Accounts\SavingsAccount .cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Models.Transfers.Transfer" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEAAAAAAAAAAAIAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Transfers\Transfer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="QBankingSystem.Models.Transfers.TransferInfo" Collapsed="true">
+    <Position X="11.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAgAAAEAAAAAAACCAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Transfers\TransferInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Models.Transfers.TransferResult" Collapsed="true">
+    <Position X="11.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Transfers\TransferResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Models.Transfers.SlowTransfer" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Transfers\SlowTransfer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Models.Transfers.FastTransfer" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Transfers\FastTransfer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Forms.BaseAccountForm" Collapsed="true">
+    <Position X="22.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgAAgAAASAAAAAAAACBAAACIAAAAAAAgAMICEQIAIA=</HashCode>
+      <FileName>Forms\BaseAccountForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Forms.LoanForm" Collapsed="true">
+    <Position X="20.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCIAAAAAACCAAAAAAICACAACAAAAAEAAAAAAQAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.Forms.TransferForm" Collapsed="true">
+    <Position X="18.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAggAIWABABIEGACEBUACAAAAgAAAMAAAAAwIAAA=</HashCode>
+      <FileName>Forms\TransferForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.UserAccountForm" Collapsed="true">
+    <Position X="13.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEABAACAQCAAASAigCAACAIAAAQgAIAAAAAAAAAA=</HashCode>
+      <FileName>Forms\UserAccountForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.UserLoginForm" Collapsed="true">
+    <Position X="15.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAiAAAAAAEACABAACAAAAgAAASBAAAABAAAA=</HashCode>
+      <FileName>Forms\UserLoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBankingSystem.UserRegistrationForm" Collapsed="true">
+    <Position X="17" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAgAAAACAiAiABAAAACAqEEKAIAQAoEAQBBAQIAAAFQ=</HashCode>
+      <FileName>Forms\UserRegistrationForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="17.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="QBankingSystem.CurUser" Collapsed="true">
+    <Position X="18.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQAAAAwABAAAEAACAAAAIAAAAAA=</HashCode>
+      <FileName>Models\CurrUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="QBankingSystem.Models.IAccount" Collapsed="true">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAACAAA=</HashCode>
+      <FileName>Models\Accounts\IAccount.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="QBankingSystem.Models.Transfers.ITransfer" Collapsed="true">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Transfers\ITransfer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
