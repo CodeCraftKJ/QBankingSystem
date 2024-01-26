@@ -4,14 +4,13 @@ namespace QBankingSystem.Models
 {
     public class CheckingAccount : Account
     {
-        public override void DisplayAccountInfo()
+        public CheckingAccount(string accountNumber) : base(accountNumber)
         {
-            Console.WriteLine($"Checking Account - Balance: ${Balance}");
         }
 
-        public override void SpecialAccountAbility()
+        public override void DisplayAccountInfo()
         {
-            Console.WriteLine("Special Ability: Easily accessible for day-to-day transactions.");
+            Console.WriteLine($"Checking Account - Account Number: {AccountNumber} - Balance: ${GetBalance()}");
         }
     }
 }

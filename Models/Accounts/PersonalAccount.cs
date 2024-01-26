@@ -4,14 +4,13 @@ namespace QBankingSystem.Models
 {
     public class PersonalAccount : Account
     {
-        public override void DisplayAccountInfo()
+        public PersonalAccount(string accountNumber) : base(accountNumber)
         {
-            Console.WriteLine($"Personal Account - Balance: ${Balance}");
         }
 
-        public override void SpecialAccountAbility()
+        public override void DisplayAccountInfo()
         {
-            Console.WriteLine("Special Ability: Personalized service for account holders.");
+            Console.WriteLine($"Personal Account - Account Number: {AccountNumber} - Balance: ${GetBalance()}");
         }
     }
 }

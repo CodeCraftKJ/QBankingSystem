@@ -4,14 +4,13 @@ namespace QBankingSystem.Models
 {
     public class BusinessAccount : Account
     {
-        public override void DisplayAccountInfo()
+        public BusinessAccount(string accountNumber) : base(accountNumber)
         {
-            Console.WriteLine($"Business Account - Balance: ${Balance}");
         }
 
-        public override void SpecialAccountAbility()
+        public override void DisplayAccountInfo()
         {
-            Console.WriteLine("Special Ability: Business financing options available.");
+            Console.WriteLine($"Business Account - Account Number: {AccountNumber} - Balance: ${GetBalance()}");
         }
     }
 }

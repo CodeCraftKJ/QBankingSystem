@@ -17,47 +17,37 @@ namespace QBankingSystem.Forms
 
         private void DisplayAccountInfo()
         {
-            accountInfoLabel.Text = currentAccount.GetType().Name;
             accountBalanceLabel.Text = $"Account Balance: ${currentAccount.GetBalance():F2}";
+            accountNumberLabel.Text = $"Account Number: {currentAccount.GetAccountNumber()}";
+            string accountTypeText;
+            switch (currentAccount)
+            {
+                case BusinessAccount _:
+                    accountTypeText = "Business Account";
+                    break;
+                case CheckingAccount _:
+                    accountTypeText = "Checking Account";
+                    break;
+                case CurrencyAccount _:
+                    accountTypeText = "Currency Account";
+                    break;
+                case PersonalAccount _:
+                    accountTypeText = "Personal Account";
+                    break;
+                case SavingsAccount _:
+                    accountTypeText = "Savings Account";
+                    break;
+                default:
+                    accountTypeText = "Unknown Account Type";
+                    break;
+            }
+            accountTypeLabel.Text = $"Account Type: {accountTypeText}";
         }
 
-        private void depositButton_Click(object sender, EventArgs e)
+        private void makeTransferButton_Click_1(object sender, EventArgs e)
         {
-            if (double.TryParse(amountTextBox.Text, out double amount))
-            {
-                currentAccount.Deposit(amount);
-                DisplayAccountInfo();
-            }
-            else
-            {
-                MessageBox.Show("Invalid amount. Please enter a valid numeric value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void withdrawalButton_Click(object sender, EventArgs e)
-        {
-            if (double.TryParse(amountTextBox.Text, out double amount))
-            {
-                try
-                {
-                    currentAccount.Withdraw(amount);
-                    DisplayAccountInfo();
-                }
-                catch (InvalidOperationException ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Invalid amount. Please enter a valid numeric value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void transferButton_Click(object sender, EventArgs e)
-        {
-            // Implement transfer logic here
-            // Example: currentAccount.TransferTo(otherAccount, amount);
+            TransferForm transferForm = new TransferForm();
+            transferForm.ShowDialog();
         }
     }
 }

@@ -2,11 +2,10 @@
 {
     partial class BaseAccountForm
     {
-        private System.Windows.Forms.Label accountInfoLabel;
+        private System.Windows.Forms.Label accountNumberLabel;
+        private System.Windows.Forms.Label accountTypeLabel;
         private System.Windows.Forms.Label accountBalanceLabel;
-        private System.Windows.Forms.TextBox amountTextBox;
-        private System.Windows.Forms.Button depositButton;
-        private System.Windows.Forms.Button withdrawalButton;
+        private System.Windows.Forms.Button makeTransferButton;
 
         /// <summary>
         /// Required designer variable.
@@ -34,67 +33,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.accountInfoLabel = new System.Windows.Forms.Label();
+            this.accountNumberLabel = new System.Windows.Forms.Label();
+            this.accountTypeLabel = new System.Windows.Forms.Label();
             this.accountBalanceLabel = new System.Windows.Forms.Label();
-            this.amountTextBox = new System.Windows.Forms.TextBox();
-            this.depositButton = new System.Windows.Forms.Button();
-            this.withdrawalButton = new System.Windows.Forms.Button();
+            this.makeTransferButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // accountInfoLabel
+            // accountNumberLabel
             // 
-            this.accountInfoLabel.AutoSize = true;
-            this.accountInfoLabel.Location = new System.Drawing.Point(30, 20);
-            this.accountInfoLabel.Name = "accountInfoLabel";
-            this.accountInfoLabel.Size = new System.Drawing.Size(93, 20);
-            this.accountInfoLabel.TabIndex = 0;
-            this.accountInfoLabel.Text = "Account Info";
+            this.accountNumberLabel.AutoSize = true;
+            this.accountNumberLabel.Location = new System.Drawing.Point(30, 20);
+            this.accountNumberLabel.Name = "accountNumberLabel";
+            this.accountNumberLabel.Size = new System.Drawing.Size(121, 20);
+            this.accountNumberLabel.TabIndex = 0;
+            this.accountNumberLabel.Text = "Account Number";
+            // 
+            // accountTypeLabel
+            // 
+            this.accountTypeLabel.AutoSize = true;
+            this.accountTypeLabel.Location = new System.Drawing.Point(30, 50);
+            this.accountTypeLabel.Name = "accountTypeLabel";
+            this.accountTypeLabel.Size = new System.Drawing.Size(98, 20);
+            this.accountTypeLabel.TabIndex = 1;
+            this.accountTypeLabel.Text = "Account Type";
             // 
             // accountBalanceLabel
             // 
             this.accountBalanceLabel.AutoSize = true;
-            this.accountBalanceLabel.Location = new System.Drawing.Point(30, 50);
+            this.accountBalanceLabel.Location = new System.Drawing.Point(30, 80);
             this.accountBalanceLabel.Name = "accountBalanceLabel";
             this.accountBalanceLabel.Size = new System.Drawing.Size(161, 20);
-            this.accountBalanceLabel.TabIndex = 1;
+            this.accountBalanceLabel.TabIndex = 2;
             this.accountBalanceLabel.Text = "Account Balance: $0.00";
             // 
-            // amountTextBox
+            // makeTransferButton
             // 
-            this.amountTextBox.Location = new System.Drawing.Point(34, 100);
-            this.amountTextBox.Name = "amountTextBox";
-            this.amountTextBox.Size = new System.Drawing.Size(100, 27);
-            this.amountTextBox.TabIndex = 2;
-            // 
-            // depositButton
-            // 
-            this.depositButton.Location = new System.Drawing.Point(150, 100);
-            this.depositButton.Name = "depositButton";
-            this.depositButton.Size = new System.Drawing.Size(80, 30);
-            this.depositButton.TabIndex = 3;
-            this.depositButton.Text = "Deposit";
-            this.depositButton.UseVisualStyleBackColor = true;
-            this.depositButton.Click += new System.EventHandler(this.depositButton_Click);
-            // 
-            // withdrawalButton
-            // 
-            this.withdrawalButton.Location = new System.Drawing.Point(250, 100);
-            this.withdrawalButton.Name = "withdrawalButton";
-            this.withdrawalButton.Size = new System.Drawing.Size(100, 30);
-            this.withdrawalButton.TabIndex = 4;
-            this.withdrawalButton.Text = "Withdraw";
-            this.withdrawalButton.UseVisualStyleBackColor = true;
+            this.makeTransferButton.Location = new System.Drawing.Point(34, 140);
+            this.makeTransferButton.Name = "makeTransferButton";
+            this.makeTransferButton.Size = new System.Drawing.Size(150, 30);
+            this.makeTransferButton.TabIndex = 3;
+            this.makeTransferButton.Text = "Make Transfer";
+            this.makeTransferButton.UseVisualStyleBackColor = true;
+            this.makeTransferButton.Click += new System.EventHandler(this.makeTransferButton_Click_1);
             // 
             // BaseAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 200);
-            this.Controls.Add(this.withdrawalButton);
-            this.Controls.Add(this.depositButton);
-            this.Controls.Add(this.amountTextBox);
             this.Controls.Add(this.accountBalanceLabel);
-            this.Controls.Add(this.accountInfoLabel);
+            this.Controls.Add(this.accountTypeLabel);
+            this.Controls.Add(this.accountNumberLabel);
+            this.Controls.Add(this.makeTransferButton);
             this.Name = "BaseAccountForm";
             this.Text = "BaseAccountForm";
             this.ResumeLayout(false);

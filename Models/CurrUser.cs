@@ -1,6 +1,6 @@
 ﻿namespace QBankingSystem
 {
-    public class User
+    public class CurUser
     {
         public static int UserID { get; set; }
         public static string Username { get; set; }

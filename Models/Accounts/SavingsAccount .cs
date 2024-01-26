@@ -4,14 +4,13 @@ namespace QBankingSystem.Models
 {
     public class SavingsAccount : Account
     {
-        public override void DisplayAccountInfo()
+        public SavingsAccount(string accountNumber) : base(accountNumber)
         {
-            Console.WriteLine($"Savings Account - Balance: ${Balance}");
         }
 
-        public override void SpecialAccountAbility()
+        public override void DisplayAccountInfo()
         {
-            Console.WriteLine("Special Ability: Interest is earned on savings.");
+            Console.WriteLine($"Savings Account - Account Number: {AccountNumber} - Balance: ${GetBalance()}");
         }
     }
 }

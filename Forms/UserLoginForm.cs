@@ -36,8 +36,8 @@ namespace QBankingSystem
                         // If the credentials are valid, show a success message and open the main dashboard
                         MessageBox.Show("Login successful!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        User.Username = username;
-                        User.Password = password;
+                        CurUser.Username = username;
+                        CurUser.Password = password;
                         UserAccountForm mainDashboard = new UserAccountForm();
                         mainDashboard.Show();
                         this.Hide(); // Hide the login form

@@ -5,18 +5,28 @@ namespace QBankingSystem.Models
     public abstract class Account : IAccount
     {
         protected double Balance { get; set; }
+        public string AccountNumber { get; private set; }
+
+        public Account(string accountNumber)
+        {
+            AccountNumber = accountNumber;
+            Balance = 0;
+        }
+        public string GetAccountNumber()
+        {
+            return AccountNumber;
+        }
 
         public abstract void DisplayAccountInfo();
-        public abstract void SpecialAccountAbility();
 
-        public double GetBalance() 
-        { 
-            return Balance; 
+        public double GetBalance()
+        {
+            return Balance;
         }
+
         public void Deposit(double amount)
         {
             Balance += amount;
-            Console.WriteLine($"Deposit of ${amount} to {GetType().Name}.");
         }
 
         public void Withdraw(double amount)
@@ -24,17 +34,11 @@ namespace QBankingSystem.Models
             if (amount <= Balance)
             {
                 Balance -= amount;
-                Console.WriteLine($"Withdrawal of ${amount} from {GetType().Name}.");
             }
             else
             {
-                Console.WriteLine($"Insufficient funds in {GetType().Name}.");
+                return;
             }
-        }
-
-        protected Account()
-        {
-            Balance = 0;
         }
     }
 }

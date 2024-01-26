@@ -4,14 +4,13 @@ namespace QBankingSystem.Models
 {
     public class CurrencyAccount : Account
     {
-        public override void DisplayAccountInfo()
+        public CurrencyAccount(string accountNumber) : base(accountNumber)
         {
-            Console.WriteLine($"Currency Account - Balance: ${Balance}");
         }
 
-        public override void SpecialAccountAbility()
+        public override void DisplayAccountInfo()
         {
-            Console.WriteLine("Special Ability: Handles multiple currencies.");
+            Console.WriteLine($"Currency Account - Account Number: {AccountNumber} - Balance: ${GetBalance()}");
         }
     }
 }

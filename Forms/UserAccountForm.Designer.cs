@@ -32,6 +32,7 @@ namespace QBankingSystem
         private System.Windows.Forms.Label labPESEL;
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.ListBox lstAccounts;
+        private System.Windows.Forms.ComboBox cmbAccountType;
 
         private void InitializeComponent()
         {
@@ -41,6 +42,7 @@ namespace QBankingSystem
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.lstAccounts = new System.Windows.Forms.ListBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.cmbAccountType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labName
@@ -72,7 +74,7 @@ namespace QBankingSystem
             // 
             // btnCreateAccount
             // 
-            this.btnCreateAccount.Location = new System.Drawing.Point(50, 200);
+            this.btnCreateAccount.Location = new System.Drawing.Point(413, 220);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(150, 30);
             this.btnCreateAccount.TabIndex = 3;
@@ -83,34 +85,50 @@ namespace QBankingSystem
             // 
             this.lstAccounts.FormattingEnabled = true;
             this.lstAccounts.ItemHeight = 20;
-            this.lstAccounts.Location = new System.Drawing.Point(239, 66);
+            this.lstAccounts.Location = new System.Drawing.Point(221, 50);
             this.lstAccounts.Name = "lstAccounts";
-            this.lstAccounts.Size = new System.Drawing.Size(200, 164);
+            this.lstAccounts.Size = new System.Drawing.Size(357, 164);
             this.lstAccounts.TabIndex = 4;
             // 
-            // button1
+            // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(50, 254);
-            this.btnRefresh.Name = "button1";
+            this.btnRefresh.Location = new System.Drawing.Point(248, 221);
+            this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(150, 29);
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.button1_Click);
             // 
-            // AccountForm
+            // cmbAccountType
+            // 
+            this.cmbAccountType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAccountType.FormattingEnabled = true;
+            this.cmbAccountType.Items.AddRange(new object[] {
+            "Personal Account",
+            "Savings Account",
+            "Checking Account",
+            "Business Account",
+            "Currency Account"});
+            this.cmbAccountType.Location = new System.Drawing.Point(413, 256);
+            this.cmbAccountType.Name = "cmbAccountType";
+            this.cmbAccountType.Size = new System.Drawing.Size(150, 28);
+            this.cmbAccountType.TabIndex = 6;
+            this.cmbAccountType.SelectedItem = "Personal Account";
+            // 
+            // UserAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 312);
+            this.ClientSize = new System.Drawing.Size(603, 312);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lstAccounts);
             this.Controls.Add(this.btnCreateAccount);
             this.Controls.Add(this.labPESEL);
             this.Controls.Add(this.labSurname);
             this.Controls.Add(this.labName);
+            this.Controls.Add(this.cmbAccountType);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "AccountForm";
+            this.Name = "UserAccountForm";
             this.Text = "Account Overview";
             this.ResumeLayout(false);
             this.PerformLayout();

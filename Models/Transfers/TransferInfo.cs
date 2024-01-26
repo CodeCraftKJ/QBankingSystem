@@ -1,20 +1,24 @@
-﻿
+﻿using System;
+
 namespace QBankingSystem.Models.Transfers
 {
     public class TransferInfo
     {
-        public string SourceAccountNumber { get; set; }
-        public string TargetAccountNumber { get; set; }
+        public string Source { get; set; }
+        public string Target { get; set; }
         public decimal Amount { get; set; }
-        public string TransferTitle { get; set; }
+        public string Title { get; set; }
+        public DateTime TransferDate { get; set; }
+        public bool Status { get; set; }
 
-        public TransferInfo(string sourceAccountNumber, string targetAccountNumber, decimal amount, string transferTitle)
+        public TransferInfo(string source, string target, decimal amount, string title, DateTime transferDate, bool status)
         {
-            SourceAccountNumber = sourceAccountNumber;
-            TargetAccountNumber = targetAccountNumber;
+            Source = source;
+            Target = target;
             Amount = amount;
-            TransferTitle = transferTitle;
+            Title = title;
+            TransferDate = transferDate;
+            Status = status;
         }
     }
-
 }
