@@ -2,10 +2,9 @@
 {
     public interface IAccount
     {
-        void DisplayAccountInfo();
-        void Deposit(double amount);
-        void Withdraw(double amount);
         double GetBalance();
+
+        void SetBalance(double newBalance);
         string GetAccountNumber();
     }
 }

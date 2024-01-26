@@ -61,7 +61,6 @@ namespace QBankingSystem.Models.Transfers
                 {
                     try
                     {
-                        // Deduct the transfer amount from the source account
                         using (SqlCommand debitCommand = new SqlCommand("UPDATE BankAccount SET Balance = Balance - @TransferAmount WHERE AccountNumber = @SourceAccountNumber", connection, transaction))
                         {
                             debitCommand.Parameters.AddWithValue("@SourceAccountNumber", sourceAccountNumber);
@@ -69,7 +68,6 @@ namespace QBankingSystem.Models.Transfers
                             debitCommand.ExecuteNonQuery();
                         }
 
-                        // Add the transfer amount to the recipient account
                         using (SqlCommand creditCommand = new SqlCommand("UPDATE BankAccount SET Balance = Balance + @TransferAmount WHERE AccountNumber = @RecipientAccountNumber", connection, transaction))
                         {
                             creditCommand.Parameters.AddWithValue("@RecipientAccountNumber", recipientAccountNumber);

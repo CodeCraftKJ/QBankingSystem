@@ -216,7 +216,7 @@ namespace QBankingSystem
 
                                 if (selectedAccount != null)
                                 {
-                                    selectedAccount.Deposit(balance);
+                                    selectedAccount.SetBalance(balance);
                                 }
 
                                 return selectedAccount;
@@ -232,6 +232,11 @@ namespace QBankingSystem
                 Console.WriteLine("Error downloading account information: " + ex.Message);
                 return null;
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadUserAccounts();
         }
     }
 }

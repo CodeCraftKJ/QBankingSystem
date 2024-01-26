@@ -9,13 +9,16 @@ namespace QBankingSystem.Forms
     public partial class TransferForm : Form
     {
         private IAccount sourceAccount;
+        private BaseAccountForm baseAccountForm;
         private bool isFastTransfer = false;
 
-        public TransferForm(IAccount source)
+        public TransferForm(IAccount source, BaseAccountForm baseForm)
         {
             InitializeComponent();
 
             sourceAccount = source;
+            baseAccountForm = baseForm;
+
             string pesel = QBankingSystem.CurUser.PESEL;
             string username = QBankingSystem.CurUser.Username;
 
@@ -80,6 +83,8 @@ namespace QBankingSystem.Forms
                 if (result.IsSuccessful)
                 {
                     MessageBox.Show(result.Message, "Transfer Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    sourceAccount.SetBalance(sourceAccount.GetBalance() - (double)amount);
+                    baseAccountForm.UpdateDisplayedBalance(sourceAccount.GetBalance());
                 }
                 else
                 {

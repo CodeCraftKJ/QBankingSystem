@@ -7,10 +7,5 @@ namespace QBankingSystem.Models
         public CurrencyAccount(string accountNumber) : base(accountNumber)
         {
         }
-
-        public override void DisplayAccountInfo()
-        {
-            Console.WriteLine($"Currency Account - Account Number: {AccountNumber} - Balance: ${GetBalance()}");
-        }
     }
 }

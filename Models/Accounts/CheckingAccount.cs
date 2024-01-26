@@ -8,9 +8,5 @@ namespace QBankingSystem.Models
         {
         }
 
-        public override void DisplayAccountInfo()
-        {
-            Console.WriteLine($"Checking Account - Account Number: {AccountNumber} - Balance: ${GetBalance()}");
-        }
     }
 }

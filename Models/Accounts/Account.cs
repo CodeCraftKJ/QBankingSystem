@@ -17,28 +17,14 @@ namespace QBankingSystem.Models
             return AccountNumber;
         }
 
-        public abstract void DisplayAccountInfo();
-
         public double GetBalance()
         {
             return Balance;
         }
-
-        public void Deposit(double amount)
+        public void SetBalance(double newBalance)
         {
-            Balance += amount;
+            Balance = newBalance;
         }
 
-        public void Withdraw(double amount)
-        {
-            if (amount <= Balance)
-            {
-                Balance -= amount;
-            }
-            else
-            {
-                return;
-            }
-        }
     }
 }

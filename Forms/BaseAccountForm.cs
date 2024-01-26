@@ -49,10 +49,13 @@ namespace QBankingSystem.Forms
             }
             accountTypeLabel.Text = $"Account Type: {accountTypeText}";
         }
-
+        public void UpdateDisplayedBalance(double newBalance)
+        {
+            accountBalanceLabel.Text = $"Account Balance: ${newBalance:F2}";
+        }
         private void makeTransferButton_Click_1(object sender, EventArgs e)
         {
-            TransferForm transferForm = new TransferForm(currentAccount);
+            TransferForm transferForm = new TransferForm(currentAccount, this);
             transferForm.ShowDialog();
         }
         private List<TransferInfo> GetTransferHistory(IAccount account)
@@ -205,6 +208,8 @@ namespace QBankingSystem.Forms
 
                         if (result.IsSuccessful)
                         {
+                            currentAccount.SetBalance(currentAccount.GetBalance() - (double)amount);
+                            UpdateDisplayedBalance(currentAccount.GetBalance());
                             successfulTransfersCount++;
                         }
                         else

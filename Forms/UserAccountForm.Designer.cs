@@ -98,6 +98,7 @@ namespace QBankingSystem
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // cmbAccountType
             // 
@@ -113,7 +114,7 @@ namespace QBankingSystem
             this.cmbAccountType.Name = "cmbAccountType";
             this.cmbAccountType.Size = new System.Drawing.Size(150, 28);
             this.cmbAccountType.TabIndex = 6;
-            this.cmbAccountType.SelectedItem = "Personal Account";
+            this.cmbAccountType.Text = "Personal Account";
             // 
             // UserAccountForm
             // 
