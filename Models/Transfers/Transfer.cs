@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QBankingSystem.Models.Transfers
 {
@@ -23,6 +19,71 @@ namespace QBankingSystem.Models.Transfers
                         command.Parameters.AddRange(parameters);
                     }
                     command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        protected bool DoesRecipientExist(string recipientAccountNumber, string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM BankAccount WHERE AccountNumber = @RecipientAccountNumber", connection))
+                {
+                    command.Parameters.AddWithValue("@RecipientAccountNumber", recipientAccountNumber);
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
+
+        protected bool AreSufficientFunds(decimal transferAmount, string connectionString, string sourceAccountNumber)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT Balance FROM BankAccount WHERE AccountNumber = @SourceAccountNumber", connection))
+                {
+                    command.Parameters.AddWithValue("@SourceAccountNumber", sourceAccountNumber);
+                    decimal currentBalance = (decimal)command.ExecuteScalar();
+                    return currentBalance >= transferAmount;
+                }
+            }
+        }
+
+        protected void UpdateBalances(string sourceAccountNumber, string recipientAccountNumber, decimal transferAmount, string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlTransaction transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        // Deduct the transfer amount from the source account
+                        using (SqlCommand debitCommand = new SqlCommand("UPDATE BankAccount SET Balance = Balance - @TransferAmount WHERE AccountNumber = @SourceAccountNumber", connection, transaction))
+                        {
+                            debitCommand.Parameters.AddWithValue("@SourceAccountNumber", sourceAccountNumber);
+                            debitCommand.Parameters.AddWithValue("@TransferAmount", transferAmount);
+                            debitCommand.ExecuteNonQuery();
+                        }
+
+                        // Add the transfer amount to the recipient account
+                        using (SqlCommand creditCommand = new SqlCommand("UPDATE BankAccount SET Balance = Balance + @TransferAmount WHERE AccountNumber = @RecipientAccountNumber", connection, transaction))
+                        {
+                            creditCommand.Parameters.AddWithValue("@RecipientAccountNumber", recipientAccountNumber);
+                            creditCommand.Parameters.AddWithValue("@TransferAmount", transferAmount);
+                            creditCommand.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
                 }
             }
         }

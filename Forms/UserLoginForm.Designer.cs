@@ -83,15 +83,15 @@ namespace QBankingSystem
             // linkForgotPassword
             // 
             this.linkForgotPassword.AutoSize = true;
-            this.linkForgotPassword.Location = new System.Drawing.Point(324, 327);
+            this.linkForgotPassword.Location = new System.Drawing.Point(274, 327);
             this.linkForgotPassword.Name = "linkForgotPassword";
-            this.linkForgotPassword.Size = new System.Drawing.Size(125, 20);
+            this.linkForgotPassword.Size = new System.Drawing.Size(229, 20);
             this.linkForgotPassword.TabIndex = 5;
             this.linkForgotPassword.TabStop = true;
-            this.linkForgotPassword.Text = "Forgot Password?";
+            this.linkForgotPassword.Text = "Don\'t have account yet? Register!";
             this.linkForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkForgotPassword_LinkClicked_1);
             // 
-            // LoginForm
+            // UserLoginForm
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -103,7 +103,7 @@ namespace QBankingSystem
             this.Controls.Add(this.labUsername);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtPassword);
-            this.Name = "LoginForm";
+            this.Name = "UserLoginForm";
             this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();
