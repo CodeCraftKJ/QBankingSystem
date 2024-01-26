@@ -19,11 +19,11 @@ namespace QBankingSystem.Forms
             sourceAccount = source;
             baseAccountForm = baseForm;
 
-            string pesel = QBankingSystem.CurUser.PESEL;
-            string username = QBankingSystem.CurUser.Username;
+            string pesel = CurUser.PESEL;
+            string username = CurUser.Username;
 
-            string firstName = QBankingSystem.CurUser.Name;
-            string lastName = QBankingSystem.CurUser.Surname;
+            string firstName = CurUser.Name;
+            string lastName = CurUser.Surname;
             string sourceAccountNumber = sourceAccount.GetAccountNumber();
 
             peselTextBox.Text = pesel;
