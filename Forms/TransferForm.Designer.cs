@@ -45,12 +45,13 @@
             this.transferTitleTextBox = new System.Windows.Forms.TextBox();
             this.amountTextBox = new System.Windows.Forms.TextBox();
             this.confirmTransferButton = new System.Windows.Forms.Button();
+            this.FastTransferButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // peselLabel
             // 
             this.peselLabel.AutoSize = true;
-            this.peselLabel.Location = new System.Drawing.Point(12, 9);
+            this.peselLabel.Location = new System.Drawing.Point(12, 166);
             this.peselLabel.Name = "peselLabel";
             this.peselLabel.Size = new System.Drawing.Size(48, 20);
             this.peselLabel.TabIndex = 0;
@@ -59,7 +60,7 @@
             // firstNameLabel
             // 
             this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Location = new System.Drawing.Point(12, 45);
+            this.firstNameLabel.Location = new System.Drawing.Point(12, 202);
             this.firstNameLabel.Name = "firstNameLabel";
             this.firstNameLabel.Size = new System.Drawing.Size(80, 20);
             this.firstNameLabel.TabIndex = 1;
@@ -68,7 +69,7 @@
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(12, 81);
+            this.lastNameLabel.Location = new System.Drawing.Point(12, 238);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(79, 20);
             this.lastNameLabel.TabIndex = 2;
@@ -77,7 +78,7 @@
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(12, 117);
+            this.usernameLabel.Location = new System.Drawing.Point(12, 281);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(75, 20);
             this.usernameLabel.TabIndex = 3;
@@ -86,7 +87,7 @@
             // sourceAccountLabel
             // 
             this.sourceAccountLabel.AutoSize = true;
-            this.sourceAccountLabel.Location = new System.Drawing.Point(12, 153);
+            this.sourceAccountLabel.Location = new System.Drawing.Point(12, 92);
             this.sourceAccountLabel.Name = "sourceAccountLabel";
             this.sourceAccountLabel.Size = new System.Drawing.Size(112, 20);
             this.sourceAccountLabel.TabIndex = 4;
@@ -95,7 +96,7 @@
             // targetAccountLabel
             // 
             this.targetAccountLabel.AutoSize = true;
-            this.targetAccountLabel.Location = new System.Drawing.Point(12, 189);
+            this.targetAccountLabel.Location = new System.Drawing.Point(12, 53);
             this.targetAccountLabel.Name = "targetAccountLabel";
             this.targetAccountLabel.Size = new System.Drawing.Size(108, 20);
             this.targetAccountLabel.TabIndex = 5;
@@ -104,7 +105,7 @@
             // transferTitleLabel
             // 
             this.transferTitleLabel.AutoSize = true;
-            this.transferTitleLabel.Location = new System.Drawing.Point(12, 225);
+            this.transferTitleLabel.Location = new System.Drawing.Point(12, 15);
             this.transferTitleLabel.Name = "transferTitleLabel";
             this.transferTitleLabel.Size = new System.Drawing.Size(94, 20);
             this.transferTitleLabel.TabIndex = 6;
@@ -113,7 +114,7 @@
             // amountLabel
             // 
             this.amountLabel.AutoSize = true;
-            this.amountLabel.Location = new System.Drawing.Point(12, 261);
+            this.amountLabel.Location = new System.Drawing.Point(12, 130);
             this.amountLabel.Name = "amountLabel";
             this.amountLabel.Size = new System.Drawing.Size(62, 20);
             this.amountLabel.TabIndex = 7;
@@ -121,7 +122,7 @@
             // 
             // peselTextBox
             // 
-            this.peselTextBox.Location = new System.Drawing.Point(152, 6);
+            this.peselTextBox.Location = new System.Drawing.Point(152, 163);
             this.peselTextBox.Name = "peselTextBox";
             this.peselTextBox.ReadOnly = true;
             this.peselTextBox.Size = new System.Drawing.Size(200, 27);
@@ -129,7 +130,7 @@
             // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(152, 42);
+            this.firstNameTextBox.Location = new System.Drawing.Point(152, 199);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.ReadOnly = true;
             this.firstNameTextBox.Size = new System.Drawing.Size(200, 27);
@@ -137,7 +138,7 @@
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(152, 78);
+            this.lastNameTextBox.Location = new System.Drawing.Point(152, 235);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.ReadOnly = true;
             this.lastNameTextBox.Size = new System.Drawing.Size(200, 27);
@@ -145,7 +146,7 @@
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(152, 114);
+            this.usernameTextBox.Location = new System.Drawing.Point(152, 278);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.ReadOnly = true;
             this.usernameTextBox.Size = new System.Drawing.Size(200, 27);
@@ -153,35 +154,35 @@
             // 
             // sourceAccountTextBox
             // 
-            this.sourceAccountTextBox.Location = new System.Drawing.Point(152, 150);
+            this.sourceAccountTextBox.Location = new System.Drawing.Point(152, 89);
             this.sourceAccountTextBox.Name = "sourceAccountTextBox";
             this.sourceAccountTextBox.Size = new System.Drawing.Size(200, 27);
             this.sourceAccountTextBox.TabIndex = 12;
             // 
             // targetAccountTextBox
             // 
-            this.targetAccountTextBox.Location = new System.Drawing.Point(152, 186);
+            this.targetAccountTextBox.Location = new System.Drawing.Point(152, 50);
             this.targetAccountTextBox.Name = "targetAccountTextBox";
             this.targetAccountTextBox.Size = new System.Drawing.Size(200, 27);
             this.targetAccountTextBox.TabIndex = 13;
             // 
             // transferTitleTextBox
             // 
-            this.transferTitleTextBox.Location = new System.Drawing.Point(152, 222);
+            this.transferTitleTextBox.Location = new System.Drawing.Point(152, 12);
             this.transferTitleTextBox.Name = "transferTitleTextBox";
             this.transferTitleTextBox.Size = new System.Drawing.Size(200, 27);
             this.transferTitleTextBox.TabIndex = 14;
             // 
             // amountTextBox
             // 
-            this.amountTextBox.Location = new System.Drawing.Point(152, 258);
+            this.amountTextBox.Location = new System.Drawing.Point(152, 127);
             this.amountTextBox.Name = "amountTextBox";
             this.amountTextBox.Size = new System.Drawing.Size(200, 27);
             this.amountTextBox.TabIndex = 15;
             // 
             // confirmTransferButton
             // 
-            this.confirmTransferButton.Location = new System.Drawing.Point(152, 301);
+            this.confirmTransferButton.Location = new System.Drawing.Point(84, 346);
             this.confirmTransferButton.Name = "confirmTransferButton";
             this.confirmTransferButton.Size = new System.Drawing.Size(200, 35);
             this.confirmTransferButton.TabIndex = 16;
@@ -189,11 +190,24 @@
             this.confirmTransferButton.UseVisualStyleBackColor = true;
             this.confirmTransferButton.Click += new System.EventHandler(this.confirmTransferButton_Click);
             // 
+            // FastTransferButton
+            // 
+            this.FastTransferButton.AutoSize = true;
+            this.FastTransferButton.Location = new System.Drawing.Point(13, 316);
+            this.FastTransferButton.Name = "FastTransferButton";
+            this.FastTransferButton.Size = new System.Drawing.Size(107, 24);
+            this.FastTransferButton.TabIndex = 17;
+            this.FastTransferButton.TabStop = true;
+            this.FastTransferButton.Text = "FastTransfer";
+            this.FastTransferButton.UseVisualStyleBackColor = true;
+            this.FastTransferButton.CheckedChanged += new System.EventHandler(this.FastTransferButton_CheckedChanged);
+            // 
             // TransferForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 350);
+            this.ClientSize = new System.Drawing.Size(377, 393);
+            this.Controls.Add(this.FastTransferButton);
             this.Controls.Add(this.confirmTransferButton);
             this.Controls.Add(this.amountTextBox);
             this.Controls.Add(this.transferTitleTextBox);
@@ -220,6 +234,7 @@
 
         #endregion
 
+  
         private System.Windows.Forms.Label peselLabel;
         private System.Windows.Forms.Label firstNameLabel;
         private System.Windows.Forms.Label lastNameLabel;
@@ -237,5 +252,6 @@
         private System.Windows.Forms.TextBox transferTitleTextBox;
         private System.Windows.Forms.TextBox amountTextBox;
         private System.Windows.Forms.Button confirmTransferButton;
+        private System.Windows.Forms.RadioButton FastTransferButton;
     }
 }

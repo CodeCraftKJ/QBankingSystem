@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 200);
+            this.ClientSize = new System.Drawing.Size(359, 200);
             this.Controls.Add(this.accountBalanceLabel);
             this.Controls.Add(this.accountTypeLabel);
             this.Controls.Add(this.accountNumberLabel);

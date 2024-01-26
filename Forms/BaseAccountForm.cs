@@ -46,7 +46,7 @@ namespace QBankingSystem.Forms
 
         private void makeTransferButton_Click_1(object sender, EventArgs e)
         {
-            TransferForm transferForm = new TransferForm();
+            TransferForm transferForm = new TransferForm(currentAccount);
             transferForm.ShowDialog();
         }
     }

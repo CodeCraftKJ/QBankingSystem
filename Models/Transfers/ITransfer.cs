@@ -1,8 +1,10 @@
 ﻿
+using System.Data.SqlClient;
+
 namespace QBankingSystem.Models.Transfers
 {
     public interface ITransfer
     {
-        TransferResult ExecuteTransfer(TransferInfo transferInfo);
+        TransferResult ExecuteTransfer(string connectionString, string insertQuery, SqlParameter[] parameters);
     }
 }
