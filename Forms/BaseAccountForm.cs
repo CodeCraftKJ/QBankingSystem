@@ -227,5 +227,10 @@ namespace QBankingSystem.Forms
             }
         }
 
+        private void TakeLoan_Click(object sender, EventArgs e)
+        {
+            LoanForm Loanform = new LoanForm(currentAccount, this);
+            Loanform.ShowDialog();
+        }
     }
 }

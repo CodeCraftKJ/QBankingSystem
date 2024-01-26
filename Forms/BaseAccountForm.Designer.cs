@@ -39,6 +39,7 @@
             this.makeTransferButton = new System.Windows.Forms.Button();
             this.GTHbutton = new System.Windows.Forms.Button();
             this.loadTransferButton = new System.Windows.Forms.Button();
+            this.TakeLoan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // accountNumberLabel
@@ -70,7 +71,7 @@
             // 
             // makeTransferButton
             // 
-            this.makeTransferButton.Location = new System.Drawing.Point(3, 94);
+            this.makeTransferButton.Location = new System.Drawing.Point(83, 165);
             this.makeTransferButton.Name = "makeTransferButton";
             this.makeTransferButton.Size = new System.Drawing.Size(150, 30);
             this.makeTransferButton.TabIndex = 3;
@@ -80,7 +81,7 @@
             // 
             // GTHbutton
             // 
-            this.GTHbutton.Location = new System.Drawing.Point(4, 165);
+            this.GTHbutton.Location = new System.Drawing.Point(73, 267);
             this.GTHbutton.Name = "GTHbutton";
             this.GTHbutton.Size = new System.Drawing.Size(170, 93);
             this.GTHbutton.TabIndex = 4;
@@ -90,7 +91,7 @@
             // 
             // loadTransferButton
             // 
-            this.loadTransferButton.Location = new System.Drawing.Point(3, 130);
+            this.loadTransferButton.Location = new System.Drawing.Point(83, 221);
             this.loadTransferButton.Name = "loadTransferButton";
             this.loadTransferButton.Size = new System.Drawing.Size(149, 29);
             this.loadTransferButton.TabIndex = 5;
@@ -98,11 +99,22 @@
             this.loadTransferButton.UseVisualStyleBackColor = true;
             this.loadTransferButton.Click += new System.EventHandler(this.loadTransferButton_Click);
             // 
+            // TakeLoan
+            // 
+            this.TakeLoan.Location = new System.Drawing.Point(83, 115);
+            this.TakeLoan.Name = "TakeLoan";
+            this.TakeLoan.Size = new System.Drawing.Size(150, 29);
+            this.TakeLoan.TabIndex = 6;
+            this.TakeLoan.Text = "Take Loan";
+            this.TakeLoan.UseVisualStyleBackColor = true;
+            this.TakeLoan.Click += new System.EventHandler(this.TakeLoan_Click);
+            // 
             // BaseAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 262);
+            this.ClientSize = new System.Drawing.Size(316, 372);
+            this.Controls.Add(this.TakeLoan);
             this.Controls.Add(this.loadTransferButton);
             this.Controls.Add(this.GTHbutton);
             this.Controls.Add(this.accountBalanceLabel);
@@ -120,5 +132,6 @@
 
         private System.Windows.Forms.Button GTHbutton;
         private System.Windows.Forms.Button loadTransferButton;
+        private System.Windows.Forms.Button TakeLoan;
     }
 }
