@@ -28,6 +28,7 @@ namespace QBankingSystem.Forms
             lastNameTextBox.Text = lastName;
             sourceAccountTextBox.Text = sourceAccountNumber;
             usernameTextBox.Text = username;
+            sourceAccountTextBox.ReadOnly = true;
         }
 
         private void FastTransferButton_CheckedChanged(object sender, EventArgs e)
@@ -46,43 +47,51 @@ namespace QBankingSystem.Forms
         {
             string sourceAccountNumber = sourceAccountTextBox.Text;
             string targetAccount = targetAccountTextBox.Text;
-            decimal amount = decimal.Parse(amountTextBox.Text);
+            string amountText = amountTextBox.Text;
             string transferTitle = transferTitleTextBox.Text;
 
-            ITransfer transferType;
-            if (isFastTransfer)
+            decimal amount;
+            if (decimal.TryParse(amountText, out amount) && amount>=0)
             {
-                transferType = new FastTransfer();
+                ITransfer transferType;
+                if (isFastTransfer)
+                {
+                    transferType = new FastTransfer();
+                }
+                else
+                {
+                    transferType = new SlowTransfer();
+                }
+
+                string connectionString = "Server=DESKTOP-K1A5G55\\SQLEXPRESS;Database=QBankingSystemDB;Integrated Security=True;";
+                string insertQuery = "INSERT INTO Transfers (Source, Target, Amount, Title, TransferDate, Status) VALUES (@Source, @Target, @Amount, @Title, @TransferDate, @Status)";
+                SqlParameter[] parameters =
+                 {
+                         new SqlParameter("@Source", sourceAccountNumber),
+                        new SqlParameter("@Target", targetAccount),
+                        new SqlParameter("@Amount", amount),
+                         new SqlParameter("@Title", transferTitle),
+                         new SqlParameter("@TransferDate", DateTime.Now),
+                        new SqlParameter("@Status", isFastTransfer)
+                 };
+
+                TransferResult result = transferType.ExecuteTransfer(connectionString, insertQuery, parameters);
+
+                if (result.IsSuccessful)
+                {
+                    MessageBox.Show(result.Message, "Transfer Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(result.Message, "Transfer Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                this.Close();
             }
             else
             {
-                transferType = new SlowTransfer();
+                MessageBox.Show("Invalid amount entered. Please enter a valid decimal number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-            string connectionString = "Server=DESKTOP-K1A5G55\\SQLEXPRESS;Database=QBankingSystemDB;Integrated Security=True;";
-            string insertQuery = "INSERT INTO Transfers (Source, Target, Amount, Title, TransferDate, Status) VALUES (@Source, @Target, @Amount, @Title, @TransferDate, @Status)";
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@Source", sourceAccountNumber),
-                new SqlParameter("@Target", targetAccount),
-                new SqlParameter("@Amount", amount),
-                new SqlParameter("@Title", transferTitle),
-                new SqlParameter("@TransferDate", DateTime.Now),
-                new SqlParameter("@Status", isFastTransfer)
-             };
-
-            TransferResult result = transferType.ExecuteTransfer(connectionString, insertQuery, parameters);
-
-            if (result.IsSuccessful)
-            {
-                MessageBox.Show(result.Message, "Transfer Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(result.Message, "Transfer Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            this.Close();
         }
+
     }
 }
