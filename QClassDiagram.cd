@@ -46,13 +46,17 @@
   <Class Name="QBankingSystem.Models.Transfers.Transfer" Collapsed="true">
     <Position X="10.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABEAAAAAAAAAAAIAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABEAEAAAAAAAAAIAAAAAAQQAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Transfers\Transfer.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TransferResult" />
+      <Property Name="TransferInfo" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="QBankingSystem.Models.Transfers.TransferInfo" Collapsed="true">
-    <Position X="11.5" Y="3.5" Width="1.5" />
+    <Position X="9.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAgAAAEAAAAAAACCAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Transfers\TransferInfo.cs</FileName>
@@ -123,13 +127,6 @@
   <Class Name="System.Windows.Forms.Form" Collapsed="true">
     <Position X="17.75" Y="1.25" Width="1.5" />
     <TypeIdentifier />
-  </Class>
-  <Class Name="QBankingSystem.CurUser" Collapsed="true">
-    <Position X="18.75" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAQAAAAwABAAAEAACAAAAIAAAAAA=</HashCode>
-      <FileName>Models\CurrUser.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Interface Name="QBankingSystem.Models.IAccount" Collapsed="true">
     <Position X="4" Y="0.75" Width="1.5" />
