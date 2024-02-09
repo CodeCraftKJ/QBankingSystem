@@ -5,22 +5,6 @@ namespace QBankingSystem.Models.Transfers
 {
     public abstract class Transfer : ITransfer
     {
-        public TransferResult TransferResult
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public TransferInfo TransferInfo
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         public abstract TransferResult ExecuteTransfer(string connectionString, string insertQuery, SqlParameter[] parameters);
 
         protected void ExecuteSqlCommand(string connectionString, string query, SqlParameter[] parameters)
